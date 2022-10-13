@@ -15,13 +15,19 @@ class Communication:
         self.bob.counter_part_public_key = self.alice.public_key
     
     def generate_shared_keys(self):
-        alice_shared_key = self.dh.generate_shared_key(self.alice.private_key, self.bob.counter_part_public_key, self.alice)
-        bob_shared_key = self.dh.generate_shared_key(self.bob.private_key, self.alice.counter_part_public_key, self.bob)
+        alice_shared_key = self.dh.generate_shared_key(self.alice.private_key, self.alice.counter_part_public_key, self.alice)
+        bob_shared_key = self.dh.generate_shared_key(self.bob.private_key, self.bob.counter_part_public_key, self.bob)
 
-        self.alice.shared_key = self.dh.BBS(alice_shared_key, 100, self.alice)
-        self.bob.shared_key = self.dh.BBS(bob_shared_key, 100, self.bob)
+        self.alice.shared_key = self.dh.BBS(alice_shared_key, 8, self.alice)
+        self.bob.shared_key = self.dh.BBS(bob_shared_key, 8, self.bob)
         
         self.dh.log(f"Shared key for {self.alice.name} - {self.bob.name}: {self.alice.shared_key}")
+    
+    def Encrypt(self, message, key):
+        return self.kes.vigener_cipher(message, key)
+    
+    def Decrypt(self, message, key):
+        return self.kes.vigener_cipher(message, key, mode="decrypt")
 
 
     # Test the communication between Alice and Bob
@@ -44,6 +50,11 @@ class Communication:
         alice_encrypted_message = self.kes.vigener_cipher(alice_message, self.alice.shared_key)
         bob_decrypted_message = self.kes.vigener_cipher(alice_encrypted_message, self.bob.shared_key, mode="decrypt")
         print(bob_decrypted_message)
+    
+    # create factory method to create a Communication object
+    @classmethod
+    def createCommunication(cls, alice: Person, bob: Person):
+        return cls(alice, bob, DH.createDH(23, 5), KES.createKES())
 
 if __name__ == "__main__":
     alice = Person("Alice")

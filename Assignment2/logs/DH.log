@@ -136,3 +136,25 @@
 2022-10-13 02:48:09,813 - DH.log - INFO - Generating BBS - 1111001110, for Alice
 2022-10-13 02:48:09,813 - DH.log - INFO - Generating BBS - 1111001110, for Bob
 2022-10-13 02:48:09,813 - DH.log - INFO - Shared key for Alice - Bob: 1111001110
+2022-10-13 18:47:29,968 - DH.log - INFO - DH - created with p = 23 and g = 5--------------------------------------------------
+2022-10-13 18:47:29,970 - DH.log - INFO - Generating private key - 71518, for Alice
+2022-10-13 18:47:29,970 - DH.log - INFO - Generating public key - 6, for Alice, with private key -1
+2022-10-13 18:47:29,970 - DH.log - INFO - Generating private key - 848776, for Bob
+2022-10-13 18:47:29,970 - DH.log - INFO - Generating public key - 3, for Bob, with private key -1
+2022-10-13 18:47:29,970 - DH.log - INFO - Sharing public keys between Alice and Bob
+2022-10-13 18:47:29,970 - DH.log - INFO - Generating shared key - 2, for Alice
+2022-10-13 18:47:29,970 - DH.log - INFO - Generating shared key - 2, for Bob
+2022-10-13 18:47:29,971 - DH.log - INFO - Generating BBS - 0011001000001100100000110010000011001000001100100000110010000011001000001100100000110010000011001000, for Alice
+2022-10-13 18:47:29,971 - DH.log - INFO - Generating BBS - 0011001000001100100000110010000011001000001100100000110010000011001000001100100000110010000011001000, for Bob
+2022-10-13 18:47:29,971 - DH.log - INFO - Shared key for Alice - Bob: 0011001000001100100000110010000011001000001100100000110010000011001000001100100000110010000011001000
+2022-10-13 18:51:01,511 - DH.log - INFO - DH - created with p = 23 and g = 5--------------------------------------------------
+2022-10-13 18:51:01,511 - DH.log - INFO - Generating private key - 476109, for Alice
+2022-10-13 18:51:01,511 - DH.log - INFO - Generating public key - 17, for Alice, with private key -1
+2022-10-13 18:51:01,511 - DH.log - INFO - Generating private key - 388185, for Bob
+2022-10-13 18:51:01,512 - DH.log - INFO - Generating public key - 15, for Bob, with private key -1
+2022-10-13 18:51:01,512 - DH.log - INFO - Sharing public keys between Alice and Bob
+2022-10-13 18:51:01,512 - DH.log - INFO - Generating shared key - 11, for Alice
+2022-10-13 18:51:01,512 - DH.log - INFO - Generating shared key - 11, for Bob
+2022-10-13 18:51:01,512 - DH.log - INFO - Generating BBS - 01000001, for Alice
+2022-10-13 18:51:01,512 - DH.log - INFO - Generating BBS - 01000001, for Bob
+2022-10-13 18:51:01,512 - DH.log - INFO - Shared key for Alice - Bob: 01000001
