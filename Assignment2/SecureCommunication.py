@@ -27,16 +27,17 @@ class SecureCommunication:
     # factory method to create a Communication object
     @classmethod
     def createCommunication(cls, user: Person):
-        return cls(user, DH.createDH(23, 5), KES.createKES())
+        return cls(user, DH.createDH(30000000091, 40000000003), KES.createKES())
 
 # Test the communication between Alice and Bob
 def test_communication(comm1: SecureCommunication, comm2: SecureCommunication):
     # Alice and Bob generates a private key and a public key
     _,_ = comm1.dh.generate_keys(comm1.user), comm1.dh.generate_keys(comm2.user)
 
-    print("Alice", "public key", comm1.user.public_key, "private key", comm1.user.private_key)
     print("\n")
+    print("Alice", "public key", comm1.user.public_key, "private key", comm1.user.private_key)
     print("Bob", "public key", comm2.user.public_key, "private key",comm2.user.private_key)
+    print("\n")
 
     # Alice and Bob share their public keys
     comm1.store_counterpart_public_key(comm2.user.public_key)
@@ -48,13 +49,15 @@ def test_communication(comm1: SecureCommunication, comm2: SecureCommunication):
 
     print("Alice", "shared key", comm1.user.shared_key)
     print("bob", "shared key", comm2.user.shared_key)
+    print("\n")
 
     # Alice encrypts the message with the shared key, and sends it to Bob
     # Bob decrypts the message with the shared key, and reads the message
     alice_message = "Hi bob"
     alice_encrypted_message = comm1.Encrypt(alice_message)
     bob_decrypted_message = comm2.Decrypt(alice_encrypted_message)
-    print(bob_decrypted_message)
+    print("Encrypted message from Alice to Bob:", alice_encrypted_message)
+    print("Decrypted message from Alice to Bob:", bob_decrypted_message)
 
 if __name__ == "__main__":
     alice = Person("Alice")

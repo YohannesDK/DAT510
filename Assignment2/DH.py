@@ -59,7 +59,6 @@ class DH(object):
 
         if person is not None:
             self.logger.info(f"Generating BBS - {bits}, for {person.name}")
-        # return "mama"
         return bits
     
     def log(self, message):
