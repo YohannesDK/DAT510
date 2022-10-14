@@ -15,7 +15,7 @@ if not os.path.exists(logger_path):
 
 logger_name = "server.log"
 logger = logging.getLogger(logger_name)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.DEBUG)
 fh = logging.FileHandler(logger_path + "/" + logger_name)
 fh.setLevel(logging.ERROR)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
