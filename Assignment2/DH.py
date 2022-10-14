@@ -20,6 +20,9 @@ class DH(object):
         return private_key
     
     def generate_public_key(self, private_key, person: Person = None):
+        """
+            Formula: PU = g^PR mod p
+        """
         public_key = pow(self.g, private_key, self.p)
         if person is not None:
             self.logger.info(f"Generating public key - {public_key}, for {person.name}, with private key {person.private_key}")
@@ -39,8 +42,16 @@ class DH(object):
             person.private_key = private_key
             person.public_key = public_key
         return private_key, public_key
+
+    def generate_psuedo_random_ceasar_key(self):
+        random.seed(self.p * self.g)
+        return random.randint(1, 25)
     
     def BBS(self, shared_key, length, person: Person = None):
+        """
+            Blum Blum Shub algorithm
+            Formula: x = (x^2) mod n
+        """
         bits = ""
         for i in range(length):
             shared_key = pow(shared_key, 2, self.p)

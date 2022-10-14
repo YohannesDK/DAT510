@@ -27,14 +27,18 @@ class KES:
                 message += self.ALPHABET[(ord(text[i]) - ord(key[i % len(key)])) % 26]
         return message
     
-    def KES_cipher(self, text, street_name, house_number, phone_nr, mode="encrypt", withimprovments=False):
+    def KES_cipher(self, text, ceasar_key, vigener_key, mode="encrypt"):
         message = ""
         text = text.upper().replace(" ", "").replace("\n", "")
 
         if mode == "encrypt":
-            message = self.ceasar_cipher(text, house_number)
-            message = self.vigener_cipher(message, street_name)
+            message = self.ceasar_cipher(text, ceasar_key)
+            message = self.vigener_cipher(message,vigener_key )
         else:
-            message = self.vigener_cipher(text, street_name, mode="decrypt")
-            message = self.ceasar_cipher(message, house_number, mode="decrypt")
+            message = self.vigener_cipher(text, vigener_key, mode="decrypt")
+            message = self.ceasar_cipher(message, ceasar_key, mode="decrypt")
         return message
+    
+    @classmethod
+    def createKES(cls):
+        return cls()
