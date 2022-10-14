@@ -585,3 +585,15 @@
 2022-10-14 03:42:16,556 - DH.log - INFO - Generating shared key - 7, for Bob
 2022-10-14 03:42:16,556 - DH.log - INFO - Generating BBS - 11001000, for Bob
 2022-10-14 03:42:16,556 - DH.log - INFO - Shared key for Bob: 11001000
+2022-10-14 04:35:10,763 - DH.log - INFO - DH - created with p = 23 and g = 5--------------------------------------------------
+2022-10-14 04:35:10,764 - DH.log - INFO - Generating private key - 939463, for Alice
+2022-10-14 04:35:10,764 - DH.log - INFO - Generating public key - 7, for Alice, with private key -1
+2022-10-14 04:35:22,318 - DH.log - INFO - DH - created with p = 23 and g = 5--------------------------------------------------
+2022-10-14 04:35:22,318 - DH.log - INFO - Generating private key - 73352, for Bob
+2022-10-14 04:35:22,318 - DH.log - INFO - Generating public key - 4, for Bob, with private key -1
+2022-10-14 04:35:49,973 - DH.log - INFO - Generating shared key - 9, for Alice
+2022-10-14 04:35:50,005 - DH.log - INFO - Generating BBS - 00100000, for Alice
+2022-10-14 04:35:50,021 - DH.log - INFO - Shared key for Alice: 00100000
+2022-10-14 04:36:07,853 - DH.log - INFO - Generating shared key - 9, for Bob
+2022-10-14 04:36:07,853 - DH.log - INFO - Generating BBS - 00100000, for Bob
+2022-10-14 04:36:07,853 - DH.log - INFO - Shared key for Bob: 00100000

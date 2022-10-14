@@ -64,8 +64,9 @@ def public_key_received_reply(data):
     secureCommunication.store_counterpart_public_key(public_key)
     secureCommunication.generate_shared_keys()
     
-    l = [f"Chat session with {user_on_other_side} started!"]
-    DisplayMessageBox(len(l[0]), l)
+    l = [f"Chat session with {user_on_other_side} started!", "   - Shared Key: " + secureCommunication.user.shared_key]
+    l_length = max([len(m) for m in l]) + 3
+    DisplayMessageBox(l_length, l)
     processing = False
 
 
@@ -129,6 +130,7 @@ def Client():
         processing = False
     
     elif action == "4":
+        print("Exiting Application...")
         exit_application = True
         sio.disconnect()
         exit(0)
@@ -138,6 +140,9 @@ if __name__ == '__main__':
     currentUser = Person(name)
     secureCommunication = SecureCommunication.createCommunication(currentUser)
     secureCommunication.dh.generate_keys(secureCommunication.user)
+
+    print(f"Client - {currentUser.name} - Started")
+    print(f"Public Key: {currentUser.public_key}", "Private Key: ", currentUser.private_key)
 
     sio.connect('http://127.0.0.1:3000')
     while not exit_application:
