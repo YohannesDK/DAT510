@@ -31,7 +31,7 @@ class P2P:
     def __init__(self, node: Node):
         self.node = node
         self.online = True
-        self.show_broadcast_messages = False
+        self.show_broadcast_messages = True
         self.last_sender = None
         self.DHT = {}
     
@@ -49,6 +49,9 @@ class P2P:
                 if data:
                     data = json.loads(data)
                     user_data = data["data"]
+
+                    if user_data["name"] == self.node.secureCommunication.user.name:
+                        continue
                     if data["type"] == "heartbeat":
                         if self.show_broadcast_messages:
                             print("Received heartbeat from", user_data["name"])

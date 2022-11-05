@@ -134,3 +134,24 @@
 2022-11-05 01:49:00,619 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
 2022-11-05 01:49:00,619 - DH.log - INFO - Generating private key - 944193, for Jens
 2022-11-05 01:49:00,619 - DH.log - INFO - Generating public key - 7329196996, for Jens, with private key -1
+2022-11-05 01:54:24,600 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 01:54:24,600 - DH.log - INFO - Generating private key - 864924, for Yohannes
+2022-11-05 01:54:24,600 - DH.log - INFO - Generating public key - 5717941063, for Yohannes, with private key -1
+2022-11-05 01:54:29,813 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 01:54:29,813 - DH.log - INFO - Generating private key - 265195, for Jens
+2022-11-05 01:54:29,813 - DH.log - INFO - Generating public key - 21867827613, for Jens, with private key -1
+2022-11-05 01:58:44,005 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 01:58:44,006 - DH.log - INFO - Generating private key - 432508, for Yohannes
+2022-11-05 01:58:44,006 - DH.log - INFO - Generating public key - 18269702985, for Yohannes, with private key -1
+2022-11-05 01:59:26,486 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 01:59:26,487 - DH.log - INFO - Generating private key - 706040, for Yohannes
+2022-11-05 01:59:26,487 - DH.log - INFO - Generating public key - 15791874519, for Yohannes, with private key -1
+2022-11-05 02:01:55,009 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 02:01:55,009 - DH.log - INFO - Generating private key - 869791, for Yohannes
+2022-11-05 02:01:55,009 - DH.log - INFO - Generating public key - 11717012212, for Yohannes, with private key -1
+2022-11-05 02:03:37,370 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 02:03:37,370 - DH.log - INFO - Generating private key - 731899, for Jens
+2022-11-05 02:03:37,370 - DH.log - INFO - Generating public key - 3411940233, for Jens, with private key -1
+2022-11-05 02:03:49,429 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-05 02:03:49,429 - DH.log - INFO - Generating private key - 361541, for Ola
+2022-11-05 02:03:49,429 - DH.log - INFO - Generating public key - 12197242423, for Ola, with private key -1
