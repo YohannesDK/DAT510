@@ -12,7 +12,7 @@ from SecureCommunication import SecureCommunication
 IP = "127.0.0.1"
 BROADCAST_PORT = 5000
 FILES = ["file1.txt", "file2.txt", "file3.txt", "file4.txt", "file5.txt",
-         "file6.txt", "file7.txt", "file8.txt", "file9.txt", "file10.txt"]
+         "file6.txt", "file7.txt"]
 
 def Find_Free_Port():
     port = None
@@ -31,7 +31,7 @@ class P2P:
     def __init__(self, node: Node):
         self.node = node
         self.online = True
-        self.show_broadcast_messages = True
+        self.show_broadcast_messages = False
         self.last_sender = None
         self.DHT = {}
     
@@ -55,7 +55,7 @@ class P2P:
                     if data["type"] == "heartbeat":
                         if self.show_broadcast_messages:
                             print("Received heartbeat from", user_data["name"])
-                        self.DHT[user_data["name"]] = {"ipaddress": user_data["ipaddress"], "files": user_data["files"], "public_key": user_data["public_key"]}
+                        self.DHT[user_data["name"]] = user_data
                     if data["type"] == "node_left":
                         if self.show_broadcast_messages:
                             print("Received node_left from", user_data["name"])
@@ -87,7 +87,7 @@ class P2P:
                 }
                 ).encode("utf-8"), ("<broadcast>", BROADCAST_PORT)) 
     #endregion
-      
+    
     def send_message(self, message: str, receiver: str):
         """
             This method sends a message to a specific node
@@ -108,7 +108,7 @@ class P2P:
                 ).encode("utf-8"))
             socket_sender.close()
     
-    def message_received(self):
+    def request_received(self):
         """
             This method listens to messages sent to the node
         """
@@ -125,8 +125,59 @@ class P2P:
                             print("\nMessage Received - ", data["from"], ": ", data["data"])
                             DisplayMenu()
                             self.last_sender = data["from"]
+                        if data["type"] == "request_file":
+                            # reply with the file requested if it exists
+                            if data["filename"] in FILES:
+                                conn.sendall(json.dumps(
+                                    {
+                                        "from": self.node.secureCommunication.user.name,
+                                        "type": "file",
+                                        "filename": data["filename"]
+                                    }
+                                    ).encode("utf-8"))
+                            else:
+                                conn.sendall(json.dumps(
+                                    {
+                                        "from": self.node.secureCommunication.user.name,
+                                        "type": "file_not_found",
+                                        "filename": None
+                                    }
+                                    ).encode("utf-8"))
             socket_receiver.close()
             
+    # region File Sharing
+    def request_public_file(self, file_name: str, receiver: str):
+        """
+            This method requests a file from a specific node
+        """
+        if receiver not in self.DHT:
+            print("\nNode not found")
+            DisplayMenu()
+            return
+        
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sender:
+            socket_sender.connect((self.DHT[receiver]["ipaddress"][0], self.DHT[receiver]["ipaddress"][1]))
+            socket_sender.sendall(json.dumps(
+                {
+                    "from": self.node.secureCommunication.user.name,
+                    "type": "request_file",
+                    "filename": file_name
+                }
+                ).encode("utf-8"))
+
+            # store the reply in a file            
+            reply = socket_sender.recv(1024)
+            if reply:
+                reply = json.loads(reply)
+                if reply["type"] == "file": 
+                    print("\nFile Received - ", file_name)
+                    if not file_name in self.node.files:
+                        self.node.files.append(file_name)
+                else:
+                    print("\nFile not available")
+            
+            socket_sender.close()
+
     def join_network(self):
         """
             This method starts the communication with the P2P network
@@ -136,9 +187,8 @@ class P2P:
         th2 = threading.Thread(target=self.update_network, daemon=True)
         th2.start()
 
-        th3 = threading.Thread(target=self.message_received, daemon=True)
+        th3 = threading.Thread(target=self.request_received, daemon=True)
         th3.start()
-
 
     # factory method
     @classmethod
@@ -147,11 +197,13 @@ class P2P:
         sc = SecureCommunication.createCommunication(user)
         sc.dh.generate_keys(sc.user)
 
+        node_files = random.choices(FILES, k=random.randint(1, len(FILES)))
+
         # find a free port
         port = Find_Free_Port()
         # create node
-        node = Node(sc, (IP, port))
-        print(f"\nP2P node created - username: {username}, port: {port}, files: {[]}, public_key: {sc.user.public_key}\n")
+        node = Node(sc, (IP, port), node_files)
+        print(f"\nP2P node created - username: {username}, port: {port}, files: {node_files}, public_key: {sc.user.public_key}\n")
 
         return cls(node)
 
@@ -167,7 +219,9 @@ def DisplayMessageBox(length, messages, withbox=True):
         print(messages, end="")
 
 def DisplayMenu():
-    actions = ["Actions:", "   1 : Toogle broadcast messages", "   2 : Show Online Nodes", "   3 : Send Message", "   4 : Reply to Last Message", "   5 : Exit"]
+    actions = ["Actions:", "   1 : Toogle broadcast messages", "   2 : Show Online Nodes", "   3 : Send Message", 
+                "   4 : Reply to Last Message", "   5 : Show all files", "   6 : Show public files",
+                "   7 : Add public file", "   8 : Request public file", "   9 : Exit", "  -1 : Kill Everyone"]
     actions_length = max([len(action) for action in actions]) + 3
     DisplayMessageBox(actions_length, actions)
 
@@ -177,6 +231,20 @@ def DisplayOnlineNodes(DHT):
         nodes.append(f"   {node} : {DHT[node]['ipaddress']}")
     nodes_length = max([len(node) for node in nodes]) + 3
     DisplayMessageBox(nodes_length, nodes)
+
+def DisplayAllFilesInNetwork(DHT):
+    files = ["All Files:"]
+    for node in DHT:
+        files.append(f"   {node} : {DHT[node]['files']}")
+    files_length = max([len(file) for file in files]) + 3
+    DisplayMessageBox(files_length, files)
+
+def DisplayPublicFiles(DHT):
+    files = ["Public Files:"]
+    for node in DHT:
+        files.append(f"   {node} : {DHT[node]['public_files']}")
+    files_length = max([len(file) for file in files]) + 3
+    DisplayMessageBox(files_length, files)
 
 def DisplayEnterAction():
     l = ["Enter Action: "]
@@ -198,6 +266,18 @@ def Program(p2p: P2P):
             message = input("Message: ")
             p2p.send_message(message, p2p.last_sender)
         elif option == "5":
+            DisplayAllFilesInNetwork(p2p.DHT)
+        elif option == "6":
+            DisplayPublicFiles(p2p.DHT)
+        elif option == "7":
+            file_to_add_to_public = input("File to add to public: ")
+            if file_to_add_to_public in p2p.node.files:
+                p2p.node.public_files.append(file_to_add_to_public)
+        elif option == "8":
+            file_to_request = input("File to request: ")
+            from_node = input("From: ")
+            p2p.request_public_file(file_to_request, from_node)
+        elif option == "9":
             p2p.online = False
             break
 
