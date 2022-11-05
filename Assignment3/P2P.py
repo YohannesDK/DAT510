@@ -32,8 +32,10 @@ class P2P:
         self.node = node
         self.online = True
         self.show_broadcast_messages = False
+        self.last_sender = None
         self.DHT = {}
     
+    #region Broadcast
     def update_received(self):
         """
             This method listens to broadcast messages on the network and adds the node to the DHT
@@ -81,16 +83,60 @@ class P2P:
                     "data": self.node.dto()
                 }
                 ).encode("utf-8"), ("<broadcast>", BROADCAST_PORT)) 
+    #endregion
+      
+    def send_message(self, message: str, receiver: str):
+        """
+            This method sends a message to a specific node
+        """
+        if receiver not in self.DHT:
+            print("\nNode not found")
+            DisplayMenu()
+            return
+        
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sender:
+            socket_sender.connect((self.DHT[receiver]["ipaddress"][0], self.DHT[receiver]["ipaddress"][1]))
+            socket_sender.sendall(json.dumps(
+                {
+                    "from": self.node.secureCommunication.user.name,
+                    "type": "message",
+                    "data": message
+                }
+                ).encode("utf-8"))
+            socket_sender.close()
     
-    def start(self):
+    def message_received(self):
+        """
+            This method listens to messages sent to the node
+        """
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_receiver:
+            socket_receiver.bind((self.node.ipaddress[0], self.node.ipaddress[1]))
+            socket_receiver.listen()
+            while self.online:
+                conn, addr = socket_receiver.accept()
+                with conn:
+                    data = conn.recv(1024)
+                    if data:
+                        data = json.loads(data)
+                        if data["type"] == "message":
+                            print("\nMessage Received - ", data["from"], ": ", data["data"])
+                            DisplayMenu()
+                            self.last_sender = data["from"]
+            socket_receiver.close()
+            
+    def join_network(self):
         """
             This method starts the communication with the P2P network
         """
-        th1 = threading.Thread(target=self.update_received)
+        th1 = threading.Thread(target=self.update_received, daemon=True)
         th1.start()
-        th2 = threading.Thread(target=self.update_network)
+        th2 = threading.Thread(target=self.update_network, daemon=True)
         th2.start()
-        
+
+        th3 = threading.Thread(target=self.message_received, daemon=True)
+        th3.start()
+
+
     # factory method
     @classmethod
     def createP2P(cls, username: str):
@@ -102,28 +148,58 @@ class P2P:
         port = Find_Free_Port()
         # create node
         node = Node(sc, (IP, port))
-        print(f"P2P node created - username: {username}, port: {port}, files: {[]}, public_key: {sc.user.public_key}")
+        print(f"\nP2P node created - username: {username}, port: {port}, files: {[]}, public_key: {sc.user.public_key}\n")
 
         return cls(node)
 
+def DisplayMessageBox(length, messages, withbox=True):
+    if withbox:
+        print("\n")
+        print("+" + "-" * length + "+")
+        for m in messages:
+            print("|" + m + " " * (length - len(m)) + "|")
+        print("+" + "-" * length + "+")
+        print("\n")
+    else:
+        print(messages, end="")
+
+def DisplayMenu():
+    actions = ["Actions:", "   1 : Toogle broadcast messages", "   2 : Show Online Nodes", "   3 : Send Message", "   4 : Reply to Last Message", "   5 : Exit"]
+    actions_length = max([len(action) for action in actions]) + 3
+    DisplayMessageBox(actions_length, actions)
+
+def DisplayOnlineNodes(DHT):
+    nodes = ["Online Nodes:"]
+    for node in DHT:
+        nodes.append(f"   {node} : {DHT[node]['ipaddress']}")
+    nodes_length = max([len(node) for node in nodes]) + 3
+    DisplayMessageBox(nodes_length, nodes)
+
+def DisplayEnterAction():
+    l = ["Enter Action: "]
+    DisplayMessageBox(len(l[0]), l[0], withbox=False)
+
 def Program(p2p: P2P):
     while True:
-        print("1. Toggle broadcast messages")
-        print("2. Show Online Nodes")
-        print("3. Exit")
-        option = input("Choose an option: ")
+        DisplayMenu()
+        option = input("Choose an Action: ")
         if option == "1":
             p2p.show_broadcast_messages = not p2p.show_broadcast_messages
         elif option == "2":
-            print(p2p.DHT)
+            DisplayOnlineNodes(p2p.DHT)
         elif option == "3":
+            receiver = input("Receiver: ")
+            message = input("Message: ")
+            p2p.send_message(message, receiver)
+        elif option == "4":
+            message = input("Message: ")
+            p2p.send_message(message, p2p.last_sender)
+        elif option == "5":
             p2p.online = False
             break
-
-        
 
 if __name__ == "__main__":
     username = input("Enter username: ")
     p2p = P2P.createP2P(username)
-    p2p.start()
+    p2p.join_network()
     Program(p2p)
