@@ -43,24 +43,6 @@ class DH(object):
             person.public_key = public_key
         return private_key, public_key
 
-    def generate_psuedo_random_ceasar_key(self):
-        random.seed(self.p * self.g)
-        return random.randint(1, 25)
-    
-    def BBS(self, shared_key, length, person: Person = None):
-        """
-            Blum Blum Shub algorithm
-            Formula: x = (x^2) mod n
-        """
-        bits = ""
-        for i in range(length):
-            shared_key = pow(shared_key, 2, self.p)
-            bits += str(shared_key % 2)
-
-        if person is not None:
-            self.logger.info(f"Generating BBS - {bits}, for {person.name}")
-        return bits
-    
     def log(self, message):
         self.logger.info(message)
     

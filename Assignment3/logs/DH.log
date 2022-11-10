@@ -308,3 +308,289 @@
 2022-11-10 21:06:35,897 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
 2022-11-10 21:06:35,898 - DH.log - INFO - Generating private key - 883291, for Jens
 2022-11-10 21:06:35,898 - DH.log - INFO - Generating public key - 23276687627, for Jens, with private key -1
+2022-11-10 21:34:20,475 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:34:20,475 - DH.log - INFO - Generating private key - 728788, for Jens
+2022-11-10 21:34:20,475 - DH.log - INFO - Generating public key - 13168336982, for Jens, with private key -1
+2022-11-10 21:34:41,545 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:34:41,545 - DH.log - INFO - Generating private key - 677719, for Yohannes
+2022-11-10 21:34:41,546 - DH.log - INFO - Generating public key - 24097766211, for Yohannes, with private key -1
+2022-11-10 21:35:37,300 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:35:37,300 - DH.log - INFO - Generating private key - 851379, for hshns
+2022-11-10 21:35:37,300 - DH.log - INFO - Generating public key - 10187569752, for hshns, with private key -1
+2022-11-10 21:38:19,341 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:38:19,341 - DH.log - INFO - Generating private key - 201626, for yohannes
+2022-11-10 21:38:19,342 - DH.log - INFO - Generating public key - 25104812109, for yohannes, with private key -1
+2022-11-10 21:40:07,280 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:40:07,281 - DH.log - INFO - Generating private key - 35536, for Yohannes
+2022-11-10 21:40:07,281 - DH.log - INFO - Generating public key - 24036392509, for Yohannes, with private key -1
+2022-11-10 21:52:48,117 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:52:48,118 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:52:48,118 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating private key - 878159, for Alice
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating private key - 878159, for Alice
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating public key - 22668827832, for Alice, with private key -1
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating public key - 22668827832, for Alice, with private key -1
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating private key - 839116, for Bob
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating private key - 839116, for Bob
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating public key - 3167648535, for Bob, with private key -1
+2022-11-10 21:52:48,118 - DH.log - INFO - Generating public key - 3167648535, for Bob, with private key -1
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating shared key - 5359587627, for Alice
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating shared key - 5359587627, for Alice
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating BBS - 00111111, for Alice
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating BBS - 00111111, for Alice
+2022-11-10 21:52:48,119 - DH.log - INFO - Shared key for Alice: 00111111
+2022-11-10 21:52:48,119 - DH.log - INFO - Shared key for Alice: 00111111
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating shared key - 5359587627, for Bob
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating shared key - 5359587627, for Bob
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating BBS - 00111111, for Bob
+2022-11-10 21:52:48,119 - DH.log - INFO - Generating BBS - 00111111, for Bob
+2022-11-10 21:52:48,119 - DH.log - INFO - Shared key for Bob: 00111111
+2022-11-10 21:52:48,119 - DH.log - INFO - Shared key for Bob: 00111111
+2022-11-10 22:25:36,334 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:25:57,041 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:25:57,042 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:25:57,042 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating private key - 35567, for Alice
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating private key - 35567, for Alice
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating public key - 15781670443, for Alice, with private key -1
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating public key - 15781670443, for Alice, with private key -1
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating private key - 657424, for Bob
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating private key - 657424, for Bob
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating public key - 19254432504, for Bob, with private key -1
+2022-11-10 22:25:57,042 - DH.log - INFO - Generating public key - 19254432504, for Bob, with private key -1
+2022-11-10 22:26:46,720 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:26:46,721 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:26:46,721 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating private key - 62534, for Alice
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating private key - 62534, for Alice
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating public key - 25077004695, for Alice, with private key -1
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating public key - 25077004695, for Alice, with private key -1
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating private key - 188388, for Bob
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating private key - 188388, for Bob
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating public key - 20216176455, for Bob, with private key -1
+2022-11-10 22:26:46,721 - DH.log - INFO - Generating public key - 20216176455, for Bob, with private key -1
+2022-11-10 22:26:46,722 - DH.log - INFO - Shared key for Alice: 15413931881
+2022-11-10 22:26:46,722 - DH.log - INFO - Shared key for Alice: 15413931881
+2022-11-10 22:28:21,662 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:28:21,663 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:28:21,663 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating private key - 649886, for Alice
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating private key - 649886, for Alice
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating public key - 12641015461, for Alice, with private key -1
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating public key - 12641015461, for Alice, with private key -1
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating private key - 567854, for Bob
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating private key - 567854, for Bob
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating public key - 8153265058, for Bob, with private key -1
+2022-11-10 22:28:21,663 - DH.log - INFO - Generating public key - 8153265058, for Bob, with private key -1
+2022-11-10 22:28:21,664 - DH.log - INFO - Shared key for Alice: 14405799817
+2022-11-10 22:28:21,664 - DH.log - INFO - Shared key for Alice: 14405799817
+2022-11-10 22:28:50,714 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:28:50,715 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:28:50,715 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating private key - 697, for Alice
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating private key - 697, for Alice
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating public key - 5424029574, for Alice, with private key -1
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating public key - 5424029574, for Alice, with private key -1
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating private key - 148848, for Bob
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating private key - 148848, for Bob
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating public key - 15085295359, for Bob, with private key -1
+2022-11-10 22:28:50,715 - DH.log - INFO - Generating public key - 15085295359, for Bob, with private key -1
+2022-11-10 22:28:50,716 - DH.log - INFO - Shared key for Alice: 14254710680
+2022-11-10 22:28:50,716 - DH.log - INFO - Shared key for Alice: 14254710680
+2022-11-10 22:29:31,255 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:29:31,255 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:29:31,255 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:29:31,255 - DH.log - INFO - Generating private key - 124534, for Alice
+2022-11-10 22:29:31,255 - DH.log - INFO - Generating private key - 124534, for Alice
+2022-11-10 22:29:31,255 - DH.log - INFO - Generating public key - 22632440013, for Alice, with private key -1
+2022-11-10 22:29:31,255 - DH.log - INFO - Generating public key - 22632440013, for Alice, with private key -1
+2022-11-10 22:29:31,256 - DH.log - INFO - Generating private key - 224115, for Bob
+2022-11-10 22:29:31,256 - DH.log - INFO - Generating private key - 224115, for Bob
+2022-11-10 22:29:31,256 - DH.log - INFO - Generating public key - 148491810, for Bob, with private key -1
+2022-11-10 22:29:31,256 - DH.log - INFO - Generating public key - 148491810, for Bob, with private key -1
+2022-11-10 22:29:31,256 - DH.log - INFO - Shared key for Alice: 4193458439
+2022-11-10 22:29:31,256 - DH.log - INFO - Shared key for Alice: 4193458439
+2022-11-10 22:31:20,375 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:31:20,376 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:31:20,376 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating private key - 682777, for Alice
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating private key - 682777, for Alice
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating public key - 11335698838, for Alice, with private key -1
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating public key - 11335698838, for Alice, with private key -1
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating private key - 850064, for Bob
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating private key - 850064, for Bob
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating public key - 7774362242, for Bob, with private key -1
+2022-11-10 22:31:20,376 - DH.log - INFO - Generating public key - 7774362242, for Bob, with private key -1
+2022-11-10 22:31:20,377 - DH.log - INFO - Shared key for Alice: 10047130299
+2022-11-10 22:31:20,377 - DH.log - INFO - Shared key for Alice: 10047130299
+2022-11-10 22:36:53,164 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:36:53,165 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:36:53,165 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating private key - 112404, for Alice
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating private key - 112404, for Alice
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating public key - 26717749647, for Alice, with private key -1
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating public key - 26717749647, for Alice, with private key -1
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating private key - 189428, for Bob
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating private key - 189428, for Bob
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating public key - 2041711804, for Bob, with private key -1
+2022-11-10 22:36:53,165 - DH.log - INFO - Generating public key - 2041711804, for Bob, with private key -1
+2022-11-10 22:36:53,166 - DH.log - INFO - Shared key for Alice: 10842014437
+2022-11-10 22:36:53,166 - DH.log - INFO - Shared key for Alice: 10842014437
+2022-11-10 22:37:26,244 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:37:26,245 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:37:26,245 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating private key - 672582, for Alice
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating private key - 672582, for Alice
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating public key - 12886374890, for Alice, with private key -1
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating public key - 12886374890, for Alice, with private key -1
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating private key - 610588, for Bob
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating private key - 610588, for Bob
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating public key - 22131604351, for Bob, with private key -1
+2022-11-10 22:37:26,245 - DH.log - INFO - Generating public key - 22131604351, for Bob, with private key -1
+2022-11-10 22:37:26,246 - DH.log - INFO - Shared key for Alice: 3821981473
+2022-11-10 22:37:26,246 - DH.log - INFO - Shared key for Alice: 3821981473
+2022-11-10 22:38:12,837 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:38:12,838 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:38:12,838 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating private key - 500119, for Alice
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating private key - 500119, for Alice
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating public key - 11779363478, for Alice, with private key -1
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating public key - 11779363478, for Alice, with private key -1
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating private key - 5854, for Bob
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating private key - 5854, for Bob
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating public key - 2447938354, for Bob, with private key -1
+2022-11-10 22:38:12,838 - DH.log - INFO - Generating public key - 2447938354, for Bob, with private key -1
+2022-11-10 22:38:12,839 - DH.log - INFO - Shared key for Alice: 9211823459
+2022-11-10 22:38:12,839 - DH.log - INFO - Shared key for Alice: 9211823459
+2022-11-10 22:42:40,698 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:42:40,699 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:42:40,699 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating private key - 546701, for Alice
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating private key - 546701, for Alice
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating public key - 23971334543, for Alice, with private key -1
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating public key - 23971334543, for Alice, with private key -1
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating private key - 816070, for Bob
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating private key - 816070, for Bob
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating public key - 19868012501, for Bob, with private key -1
+2022-11-10 22:42:40,699 - DH.log - INFO - Generating public key - 19868012501, for Bob, with private key -1
+2022-11-10 22:42:40,700 - DH.log - INFO - Shared key for Alice: 27672436896
+2022-11-10 22:42:40,700 - DH.log - INFO - Shared key for Alice: 27672436896
+2022-11-10 22:43:13,036 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:43:13,036 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:43:13,036 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:43:13,036 - DH.log - INFO - Generating private key - 593205, for Alice
+2022-11-10 22:43:13,036 - DH.log - INFO - Generating private key - 593205, for Alice
+2022-11-10 22:43:13,036 - DH.log - INFO - Generating public key - 22589804376, for Alice, with private key -1
+2022-11-10 22:43:13,036 - DH.log - INFO - Generating public key - 22589804376, for Alice, with private key -1
+2022-11-10 22:43:13,037 - DH.log - INFO - Generating private key - 151017, for Bob
+2022-11-10 22:43:13,037 - DH.log - INFO - Generating private key - 151017, for Bob
+2022-11-10 22:43:13,037 - DH.log - INFO - Generating public key - 23965139433, for Bob, with private key -1
+2022-11-10 22:43:13,037 - DH.log - INFO - Generating public key - 23965139433, for Bob, with private key -1
+2022-11-10 22:43:13,037 - DH.log - INFO - Shared key for Alice: 24278239426
+2022-11-10 22:43:13,037 - DH.log - INFO - Shared key for Alice: 24278239426
+2022-11-10 22:43:25,160 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:43:25,161 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:43:25,161 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating private key - 833317, for Alice
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating private key - 833317, for Alice
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating public key - 19359922007, for Alice, with private key -1
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating public key - 19359922007, for Alice, with private key -1
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating private key - 147956, for Bob
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating private key - 147956, for Bob
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating public key - 16971109929, for Bob, with private key -1
+2022-11-10 22:43:25,161 - DH.log - INFO - Generating public key - 16971109929, for Bob, with private key -1
+2022-11-10 22:43:25,162 - DH.log - INFO - Shared key for Alice: 5506406730
+2022-11-10 22:43:25,162 - DH.log - INFO - Shared key for Alice: 5506406730
+2022-11-10 22:46:21,718 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:21,718 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:21,718 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:21,718 - DH.log - INFO - Generating private key - 403231, for Alice
+2022-11-10 22:46:21,718 - DH.log - INFO - Generating private key - 403231, for Alice
+2022-11-10 22:46:21,718 - DH.log - INFO - Generating public key - 2750677669, for Alice, with private key -1
+2022-11-10 22:46:21,718 - DH.log - INFO - Generating public key - 2750677669, for Alice, with private key -1
+2022-11-10 22:46:21,718 - DH.log - INFO - Generating private key - 946687, for Bob
+2022-11-10 22:46:21,718 - DH.log - INFO - Generating private key - 946687, for Bob
+2022-11-10 22:46:21,719 - DH.log - INFO - Generating public key - 5481281919, for Bob, with private key -1
+2022-11-10 22:46:21,719 - DH.log - INFO - Generating public key - 5481281919, for Bob, with private key -1
+2022-11-10 22:46:21,719 - DH.log - INFO - Shared key for Alice: 8759086042
+2022-11-10 22:46:21,719 - DH.log - INFO - Shared key for Alice: 8759086042
+2022-11-10 22:46:26,802 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:26,802 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:26,802 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:26,802 - DH.log - INFO - Generating private key - 615002, for Alice
+2022-11-10 22:46:26,802 - DH.log - INFO - Generating private key - 615002, for Alice
+2022-11-10 22:46:26,803 - DH.log - INFO - Generating public key - 7956265593, for Alice, with private key -1
+2022-11-10 22:46:26,803 - DH.log - INFO - Generating public key - 7956265593, for Alice, with private key -1
+2022-11-10 22:46:26,803 - DH.log - INFO - Generating private key - 469714, for Bob
+2022-11-10 22:46:26,803 - DH.log - INFO - Generating private key - 469714, for Bob
+2022-11-10 22:46:26,803 - DH.log - INFO - Generating public key - 26866255330, for Bob, with private key -1
+2022-11-10 22:46:26,803 - DH.log - INFO - Generating public key - 26866255330, for Bob, with private key -1
+2022-11-10 22:46:26,803 - DH.log - INFO - Shared key for Alice: 4818503026
+2022-11-10 22:46:26,803 - DH.log - INFO - Shared key for Alice: 4818503026
+2022-11-10 22:46:30,382 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:30,383 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:30,383 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating private key - 800206, for Alice
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating private key - 800206, for Alice
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating public key - 27011565526, for Alice, with private key -1
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating public key - 27011565526, for Alice, with private key -1
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating private key - 409296, for Bob
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating private key - 409296, for Bob
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating public key - 12859532129, for Bob, with private key -1
+2022-11-10 22:46:30,383 - DH.log - INFO - Generating public key - 12859532129, for Bob, with private key -1
+2022-11-10 22:46:30,388 - DH.log - INFO - Shared key for Alice: 6068761297
+2022-11-10 22:46:30,388 - DH.log - INFO - Shared key for Alice: 6068761297
+2022-11-10 23:10:39,599 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:10:39,599 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:10:39,599 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating private key - 199176, for Alice
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating private key - 199176, for Alice
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating public key - 29070438779, for Alice, with private key -1
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating public key - 29070438779, for Alice, with private key -1
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating private key - 558133, for Bob
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating private key - 558133, for Bob
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating public key - 10738463483, for Bob, with private key -1
+2022-11-10 23:10:39,600 - DH.log - INFO - Generating public key - 10738463483, for Bob, with private key -1
+2022-11-10 23:10:39,601 - DH.log - INFO - Shared key for Alice: 11556937431
+2022-11-10 23:10:39,601 - DH.log - INFO - Shared key for Alice: 11556937431
+2022-11-10 23:10:57,365 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:10:57,366 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:10:57,366 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating private key - 757319, for Alice
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating private key - 757319, for Alice
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating public key - 13156002598, for Alice, with private key -1
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating public key - 13156002598, for Alice, with private key -1
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating private key - 779999, for Bob
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating private key - 779999, for Bob
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating public key - 8271768793, for Bob, with private key -1
+2022-11-10 23:10:57,366 - DH.log - INFO - Generating public key - 8271768793, for Bob, with private key -1
+2022-11-10 23:10:57,367 - DH.log - INFO - Shared key for Alice: 7134556566
+2022-11-10 23:10:57,367 - DH.log - INFO - Shared key for Alice: 7134556566
+2022-11-10 23:11:57,838 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:11:57,838 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:11:57,838 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:11:57,838 - DH.log - INFO - Generating private key - 309995, for Alice
+2022-11-10 23:11:57,838 - DH.log - INFO - Generating private key - 309995, for Alice
+2022-11-10 23:11:57,839 - DH.log - INFO - Generating public key - 7026985343, for Alice, with private key -1
+2022-11-10 23:11:57,839 - DH.log - INFO - Generating public key - 7026985343, for Alice, with private key -1
+2022-11-10 23:11:57,839 - DH.log - INFO - Generating private key - 347343, for Bob
+2022-11-10 23:11:57,839 - DH.log - INFO - Generating private key - 347343, for Bob
+2022-11-10 23:11:57,839 - DH.log - INFO - Generating public key - 800287663, for Bob, with private key -1
+2022-11-10 23:11:57,839 - DH.log - INFO - Generating public key - 800287663, for Bob, with private key -1
+2022-11-10 23:11:57,839 - DH.log - INFO - Shared key for Alice: 11102070179
+2022-11-10 23:11:57,839 - DH.log - INFO - Shared key for Alice: 11102070179
+2022-11-10 23:19:26,161 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:19:26,161 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:19:26,161 - DH.log - INFO - DH - created with p = 30000000091 and g = 40000000003--------------------------------------------------
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating private key - 818639, for Alice
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating private key - 818639, for Alice
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating public key - 24626022309, for Alice, with private key -1
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating public key - 24626022309, for Alice, with private key -1
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating private key - 95470, for Bob
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating private key - 95470, for Bob
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating public key - 21050980815, for Bob, with private key -1
+2022-11-10 23:19:26,162 - DH.log - INFO - Generating public key - 21050980815, for Bob, with private key -1
+2022-11-10 23:19:26,162 - DH.log - INFO - Shared key for Alice -> Bob : 2954013017
+2022-11-10 23:19:26,162 - DH.log - INFO - Shared key for Alice -> Bob : 2954013017
+2022-11-10 23:19:26,163 - DH.log - INFO - Shared key for Bob -> Alice : 2954013017
+2022-11-10 23:19:26,163 - DH.log - INFO - Shared key for Bob -> Alice : 2954013017

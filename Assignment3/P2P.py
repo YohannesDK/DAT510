@@ -5,6 +5,7 @@ import json
 import time
 import os
 import shutil
+import io
 
 from Person import Person
 from Node import Node
@@ -60,6 +61,7 @@ class P2P:
                         if self.show_broadcast_messages:
                             print("Received heartbeat from", user_data["name"])
                         self.DHT[user_data["name"]] = user_data
+                        self.node.secureCommunication.store_peers_public_key(user_data["name"], user_data["public_key"])
                     if data["type"] == "node_left":
                         if self.show_broadcast_messages:
                             print("Received node_left from", user_data["name"])
@@ -299,6 +301,11 @@ def Program(p2p: P2P):
 if __name__ == "__main__":
     username = input("Enter username: ")
     p2p = P2P.createP2P(username)
+
+    # print bytes of public key
+    print("bytes of pb")
+    print(b'Sixteen byte key')
+    print(p2p.node.secureCommunication.user.public_key.to_bytes(32, byteorder='big'))
 
     # delete folder with name = username if it exists, and all files inside
     if os.path.exists(f"{DOWNLOADS_FOLDER}/{username}"):
