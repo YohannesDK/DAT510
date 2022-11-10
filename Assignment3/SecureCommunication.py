@@ -1,5 +1,4 @@
 from DH import DH
-from KES import KES
 from Person import Person
 from cryptography.fernet import Fernet
 import base64
@@ -36,16 +35,35 @@ class SecureCommunication:
     def get_all_shared_keys(self):
         return self.user.peers_shared_keys
     
+    def generate_shared_fernet_key(self, shared_key: int):
+        return base64.urlsafe_b64encode(shared_key.to_bytes(32, byteorder='big'))
     
-    def Encrypt(self, file_name, peer):
+    def generate_encryption_key(self, peer: str):
         shared_key = self.get_peers_shared_key(peer)
         public_key = None
         if shared_key is None:
-            p
-            return None
+            public_key = self.get_peers_public_key(peer)
+            if public_key is None:
+                return None
+            shared_key = self.generate_shared_key(peer)
+        
+        shared_fernet_key = self.generate_shared_fernet_key(shared_key)
+        return shared_fernet_key
     
-    def Decrypt(self, message):
-        ceasar_key = self.dh.generate_psuedo_random_ceasar_key()
+    
+    def Encrypt(self, file_name: str, peer: str) -> bytes:
+        shared_fernet_key = self.generate_encryption_key(peer)
+        fernet = Fernet(shared_fernet_key)
+        with open(f"Files/{file_name}", 'rb') as file:
+            file_data = file.read()
+        file.close()
+        return fernet.encrypt(file_data)
+
+    
+    def Decrypt(self, encrypted_file: bytes, peer: str) -> bytes:
+        shared_fernet_key = self.generate_encryption_key(peer)
+        fernet = Fernet(shared_fernet_key)
+        return fernet.decrypt(encrypted_file)
 
     # factory method to create a Communication object
     @classmethod
@@ -53,49 +71,34 @@ class SecureCommunication:
         return cls(user, DH.createDH(30000000091, 40000000003))
 
 # Test the communication between Alice and Bob
-def test_communication(comm1: SecureCommunication, comm2: SecureCommunication):
+def test_communication(alice_comm: SecureCommunication, bob_comm: SecureCommunication):
+    FILE = "likeaboss.jpg"
+    FILE_NAME, EXT = FILE.split(".")
     # Alice and Bob generates a private key and a public key
-    _,_ = comm1.dh.generate_keys(comm1.user), comm1.dh.generate_keys(comm2.user)
-
-    print("\n")
-    print("Alice", "public key", comm1.user.public_key, "private key", comm1.user.private_key)
-    print("Bob", "public key", comm2.user.public_key, "private key",comm2.user.private_key)
-    print("\n")
+    _,_ = alice_comm.dh.generate_keys(alice_comm.user), alice_comm.dh.generate_keys(bob_comm.user)
 
     # Alice sends her public key to Bob
-    comm1.store_peers_public_key(comm2.user.name, comm2.user.public_key)
-    comm2.store_peers_public_key(comm1.user.name, comm1.user.public_key)
+    alice_comm.store_peers_public_key(bob_comm.user.name, bob_comm.user.public_key)
+    bob_comm.store_peers_public_key(alice_comm.user.name, alice_comm.user.public_key)
 
-    comm1.generate_shared_key(comm2.user.name)
-    comm2.generate_shared_key(comm1.user.name)
+    alice_comm.generate_shared_key(bob_comm.user.name)
+    bob_comm.generate_shared_key(alice_comm.user.name)
 
-    alice_bob_shared_key = comm1.get_peers_shared_key(comm2.user.name)
-    bob_alice_shared_key = comm2.get_peers_shared_key(comm1.user.name)
-    print("Generated Shared Keys", alice_bob_shared_key, bob_alice_shared_key)
-    
-    shared_fernet_key_alice = base64.urlsafe_b64encode(alice_bob_shared_key.to_bytes(32, byteorder='big'))
-    shared_fernet_key_bob = base64.urlsafe_b64encode(bob_alice_shared_key.to_bytes(32, byteorder='big'))
+    # encrypting the file, using Bob's public key
+    print("Alice encrypts the file using Bob's public key")
+    encrypted = alice_comm.Encrypt(f'{FILE}', bob_comm.user.name)
 
-    fernet_alice = Fernet(shared_fernet_key_alice)
-    fernet_bob = Fernet(shared_fernet_key_bob)
-
-    with open('Files/file1.txt', 'rb') as file:
-        original = file.read()
-        
-    # encrypting the file
-    encrypted = fernet_alice.encrypt(original)
-    
-    # opening the file in write mode and
     # writing the encrypted data
-    with open('file1.encrypted.txt', 'wb') as encrypted_file:
+    with open(f'EncryptionTest/{FILE_NAME}.encrypted.{EXT}', 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
     
     # decrypting the file
-    with open('file1.encrypted.txt', 'rb') as enc_file:
+    with open(f'EncryptionTest/{FILE_NAME}.encrypted.{EXT}', 'rb') as enc_file:
         encrypted_read = enc_file.read()
     
-    decrypted = fernet_bob.decrypt(encrypted_read)
-    with open('file1.decrypted.txt', 'wb') as dec_file:
+    print("Bob decrypts the file using Alice's public key")
+    decrypted = bob_comm.Decrypt(encrypted_read, alice_comm.user.name)
+    with open(f'EncryptionTest/{FILE_NAME}.decrypted.{EXT}', 'wb') as dec_file:
         dec_file.write(decrypted)
 
 if __name__ == "__main__":
