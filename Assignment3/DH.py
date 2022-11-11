@@ -49,7 +49,6 @@ class DH(object):
     # factory method to create a DH object
     @classmethod
     def createDH(cls, p, g, dh_name="test"):
-        print(f"Creating DH object with p={p}, g={g}, dh_name={dh_name}")
         logger_path = "./logs"
 
         # create folder if it doesn't exist

@@ -14,10 +14,10 @@ from SecureCommunication import SecureCommunication
 # localhost ip address
 IP = "127.0.0.1"
 BROADCAST_PORT = 5000
-FILES = ["file1.txt", "file2.txt", "file3.txt", "file4.txt", "file5.txt",
-         "file6.txt", "file7.txt"]
+FILES = ["file1.txt", "file2.txt", "file3.txt", "file4.txt", "file5.txt", "file6.txt"]
 BUFFER_SIZE = 1024
 DOWNLOADS_FOLDER = "./Downloads"
+UNIX_PLATFORM = os.name == "posix"
 
 def Find_Free_Port():
     port = None
@@ -46,6 +46,8 @@ class P2P:
             This method listens to broadcast messages on the network and adds the node to the DHT
         """
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP) as socket_receiver:
+            if UNIX_PLATFORM:
+                socket_receiver.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
             socket_receiver.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             socket_receiver.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
             socket_receiver.bind(("", BROADCAST_PORT))
@@ -73,6 +75,8 @@ class P2P:
         """
         
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP) as socket_sender:
+            if UNIX_PLATFORM:
+                socket_sender.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
             socket_sender.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             socket_sender.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
             # socket_sender.settimeout(10)
@@ -132,6 +136,7 @@ class P2P:
                             DisplayMenu()
                             self.last_sender = data["from"]
                         if data["type"] == "request_file":
+                            fernet = self.node.secureCommunication.init_peer_file_transfer(data["from"])
                             # reply with the file requested if it exists
                             if data["filename"] in FILES:
                                 with open(f"./Files/{data['filename']}", "rb") as file:
@@ -139,7 +144,8 @@ class P2P:
                                         bytes_read = file.read(BUFFER_SIZE)
                                         if not bytes_read:
                                             break
-                                        conn.sendall(bytes_read)
+                                        encrypted_bytes = self.node.secureCommunication.Encrypt(fernet, bytes_read)
+                                        conn.sendall(encrypted_bytes)
                             else:
                                 conn.sendall(json.dumps(
                                     {
@@ -159,6 +165,9 @@ class P2P:
             print("\nNode not found")
             DisplayMenu()
             return
+        
+        # receiver exists, so we need to init encryption process
+        fernet = self.node.secureCommunication.init_peer_file_transfer(receiver)
         
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sender:
             socket_sender.connect((self.DHT[receiver]["ipaddress"][0], self.DHT[receiver]["ipaddress"][1]))
@@ -182,7 +191,9 @@ class P2P:
                     if not bytes_read:
                         file_found += 1
                         break
-                    file.write(bytes_read)
+                    decrypted_bytes = self.node.secureCommunication.Decrypt(fernet, bytes_read)
+                    print(decrypted_bytes)
+                    file.write(decrypted_bytes)
             if file_found != 0:
                 print("\nFile downloaded successfully")
                 self.node.files.append(file_name)
@@ -209,7 +220,7 @@ class P2P:
         sc = SecureCommunication.createCommunication(user)
         sc.dh.generate_keys(sc.user)
 
-        node_files = random.choices(FILES, k=random.randint(1, len(FILES)))
+        node_files = random.choices(FILES, k=random.randint(1, len(FILES) // 2))
 
         # make sure no duplicate files are added
         node_files = list(dict.fromkeys(node_files))
@@ -301,11 +312,6 @@ def Program(p2p: P2P):
 if __name__ == "__main__":
     username = input("Enter username: ")
     p2p = P2P.createP2P(username)
-
-    # print bytes of public key
-    print("bytes of pb")
-    print(b'Sixteen byte key')
-    print(p2p.node.secureCommunication.user.public_key.to_bytes(32, byteorder='big'))
 
     # delete folder with name = username if it exists, and all files inside
     if os.path.exists(f"{DOWNLOADS_FOLDER}/{username}"):
