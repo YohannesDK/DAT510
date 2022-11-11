@@ -5,7 +5,6 @@ import json
 import time
 import os
 import shutil
-import io
 
 from Person import Person
 from Node import Node
@@ -192,10 +191,10 @@ class P2P:
                         file_found += 1
                         break
                     decrypted_bytes = self.node.secureCommunication.Decrypt(fernet, bytes_read)
-                    print(decrypted_bytes)
                     file.write(decrypted_bytes)
             if file_found != 0:
-                print("\nFile downloaded successfully")
+                print("\n Received file from", receiver)
+                print(f"\nFile downloaded successfully to {download_path}")
                 self.node.files.append(file_name)
             file.close()
             socket_sender.close()
@@ -307,6 +306,7 @@ def Program(p2p: P2P):
             p2p.request_public_file(file_to_request, from_node)
         elif option == "9":
             p2p.online = False
+            p2p.update_network("node_left")
             break
 
 if __name__ == "__main__":

@@ -1,4 +1,3 @@
-from io import BufferedReader
 from DH import DH
 from Person import Person
 from cryptography.fernet import Fernet
@@ -81,8 +80,8 @@ class SecureCommunication:
 # Test the communication between Alice and Bob
 def test_communication(alice_comm: SecureCommunication, bob_comm: SecureCommunication):
     BUFFER = 1024
-    FILES = ["file1.txt", "file2.txt", "file3.txt", "likeaboss.jpg", "torrent.png"]
-    FILE = FILES[3]
+    FILES = ["file1.txt", "file2.txt", "file3.txt"]
+    FILE = FILES[1]
     FILE_NAME, EXT = FILE.split(".")
     # Alice and Bob generates a private key and a public key
     _,_ = alice_comm.dh.generate_keys(alice_comm.user), alice_comm.dh.generate_keys(bob_comm.user)
